@@ -3,6 +3,7 @@ import { Challenge } from './schema/challenge.schema';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { UserChallenge } from './schema/challenge_user.schema';
+import { range } from 'rxjs';
 
 @Injectable()
 export class ChallengeService {
@@ -22,6 +23,14 @@ export class ChallengeService {
     async getAll(): Promise<Challenge[]> {
         const result = await this.model.find().exec();
         return result
+    }
+
+    async getRandom(): Promise<Challenge> {
+        const result = await this.model.find().exec();
+
+        const randomValue = result[(Math.floor(Math.random() * result.length))]
+
+        return randomValue
     }
 
     async getChallengeById(challengeId: string): Promise<Challenge> {

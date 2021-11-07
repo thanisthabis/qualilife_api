@@ -11,6 +11,7 @@ import { JwtAuthGuard } from './modules/auth/jwt-auth.guard';
 import { LoggerMiddleware } from './common/middleware/logger.middleware';
 import { JwtRoleGuard } from './modules/auth/jwt-role.guard';
 import { ChallengeModule } from './modules/challenge/challenge.module';
+import { ChallengeModeModule } from './modules/challenge-mode/challenge_mode.module';
 
 
 @Module({
@@ -31,6 +32,7 @@ import { ChallengeModule } from './modules/challenge/challenge.module';
     UserModule,
     AuthModule,
     ChallengeModule,
+    ChallengeModeModule
   ],
   controllers: [AppController],
   providers: [AppService,

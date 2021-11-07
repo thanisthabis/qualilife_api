@@ -30,6 +30,13 @@ export class ChallengeController  {
         return new ResponseDTO<Challenge[]>(challenges);
     }
 
+    @Get('random')
+    async getRandom(): Promise<ResponseDTO<any>> {
+        const data = await this.service.getRandom()
+
+        return new ResponseDTO<any>(data, "Success")
+    }
+
 
     @ApiOperation({
         summary: "get challenge By User ID"

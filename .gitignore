@@ -17,7 +17,7 @@ lerna-debug.log*
 .env
 
 # NODE
-#package-lock.json
+package-lock.json
 
 # Tests
 /coverage
